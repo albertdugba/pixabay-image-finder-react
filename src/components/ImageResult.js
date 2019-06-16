@@ -2,12 +2,14 @@ import React from "react";
 import "../App.css";
 
 const ImageResult = props => (
-  <div>
+  <div className="ImageGrid">
     {props.data.map(image => {
       return (
-        <div key={image.id} className="Grid">
-          <img src={image.largeImageURL} alt="Pixabay" />
-          <p>Pixabay</p>
+        <div key={image.id}>
+          <div>
+            <img src={image.largeImageURL} alt="Pixabay" />
+            <p>Pixabay</p>
+          </div>
         </div>
       );
     })}
