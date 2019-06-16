@@ -25,7 +25,6 @@ class SearchForm extends Component {
           onChange={this.onChangeHandler}
           placeholder="Search for awesome images"
         />
-        ;
       </form>
     );
   }

@@ -46,3 +46,22 @@ form::before {
   align-items: center;
   font: 3rem;
 }
+
+.ImageResult {
+  grid-gap: 2rem;
+  max-width: 1000px;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  margin-top: 200px;
+}
+
+.ImageResult img {
+  width: 360px;
+  height: 360px;
+}
+
+.Grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}

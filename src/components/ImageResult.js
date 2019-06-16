@@ -1,14 +1,13 @@
 import React from "react";
+import "../App.css";
 
 const ImageResult = props => (
   <div>
     {props.data.map(image => {
       return (
-        <div key={image.id}>
+        <div key={image.id} className="Grid">
           <img src={image.largeImageURL} alt="Pixabay" />
-          <p>
-            By <strong>{image.user}</strong>
-          </p>
+          <p>Pixabay</p>
         </div>
       );
     })}

@@ -20,7 +20,7 @@ class App extends Component {
         }&q=${input}&image_type=photo`
       )
       .then(data => this.setState({ images: data.data.hits, loading: false }))
-      .catch(error => console.log(error));
+      .catch(error => this.setState({ loading: false }));
   };
   render() {
     console.log(this.state.images);
@@ -30,7 +30,10 @@ class App extends Component {
         {this.state.loading ? (
           <p className="loading">Loading...</p>
         ) : (
-          <ImageResult data={this.state.images} />
+          <div className="ImageResult">
+            {" "}
+            <ImageResult data={this.state.images} />
+          </div>
         )}
       </div>
     );
