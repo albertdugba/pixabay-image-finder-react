@@ -30,9 +30,9 @@ class App extends Component {
         {this.state.loading ? (
           <p className="loading">Loading...</p>
         ) : (
-          <div className="ImageResult">
+          <div>
             {" "}
-            <ImageResult data={this.state.images} />
+            <ImageResult data={this.state.images} className="ImageTop" />
           </div>
         )}
       </div>

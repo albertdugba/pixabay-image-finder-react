@@ -47,21 +47,13 @@ form::before {
   font: 3rem;
 }
 
-.ImageResult {
-  grid-gap: 2rem;
-  max-width: 1000px;
-  padding: 1rem;
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  margin-top: 200px;
+.ImageGrid {
+  margin: auto;
+  padding: 20px auto;
+  margin: auto;
 }
 
-.ImageResult img {
-  width: 360px;
+.ImageTop img {
   height: 360px;
-}
-
-.Grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  width: 360px;
 }
