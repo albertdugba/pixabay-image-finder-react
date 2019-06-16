@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import axios from "axios";
 import SearchForm from "./components/SearchForm";
+import ImageResult from "./components/ImageResult";
 
 class App extends Component {
   state = {
@@ -10,12 +11,27 @@ class App extends Component {
     images: []
   };
   onSearchQuery = input => {
-    console.log(input);
+    // console.log(input);
+    this.setState({ loading: true });
+    axios
+      .get(
+        `${this.state.apiURL}key=${
+          this.state.apiKey
+        }&q=${input}&image_type=photo`
+      )
+      .then(data => this.setState({ images: data.data.hits, loading: false }))
+      .catch(error => console.log(error));
   };
   render() {
+    console.log(this.state.images);
     return (
       <div>
         <SearchForm addSearchQuery={this.onSearchQuery} />
+        {this.state.loading ? (
+          <p className="loading">Loading...</p>
+        ) : (
+          <ImageResult data={this.state.images} />
+        )}
       </div>
     );
   }
