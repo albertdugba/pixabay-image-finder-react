@@ -1,33 +1,32 @@
 import React, { Component } from "react";
-import App from "../App.css";
+import "../App.css";
 
 class SearchForm extends Component {
   state = {
     inputKey: ""
   };
 
-  onChangeHandler = event => {
+  onChangeHandler = event =>
     this.setState({ [event.target.name]: event.target.value });
-  };
 
   onSubmitHandler = event => {
     event.preventDefault();
     this.props.addSearchQuery(this.state.inputKey);
+    this.setState({ inputKey: "" });
   };
 
   render() {
     return (
-      <div>
-        <form onSubmit={this.onSubmitHandler}>
-          <input
-            onChange={this.state.onChangeHandler}
-            name="inputKey"
-            type="text"
-            value={this.state.inputKey}
-            placeholder="Search for awesome images"
-          />
-        </form>
-      </div>
+      <form onSubmit={this.onSubmitHandler}>
+        <input
+          type="text"
+          name="inputKey"
+          value={this.state.inputKey}
+          onChange={this.onChangeHandler}
+          placeholder="Search for awesome images"
+        />
+        ;
+      </form>
     );
   }
 }

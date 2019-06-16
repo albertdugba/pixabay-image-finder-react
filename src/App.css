@@ -11,7 +11,7 @@ form {
   top: 0;
   width: 100%;
   z-index: 2;
-  /* background: rgba(199, 7, 7, 0); */
+  background: #000;
   height: 30vh;
 }
 
@@ -23,6 +23,7 @@ form input {
   border: none;
   border: 1px solid grey;
   border-radius: 20px;
+  font-size: 1 rem;
 }
 
 form::before {
@@ -36,4 +37,12 @@ form::before {
   height: 100%;
   z-index: -1;
   opacity: 0.9;
+}
+
+.loading {
+  margin-top: 200px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  font: 3rem;
 }
