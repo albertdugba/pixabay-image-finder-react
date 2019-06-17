@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import axios from "axios";
 import SearchForm from "./components/SearchForm";
 import ImageResult from "./components/ImageResult";
+import Widget from "./components/Widget";
 
 class App extends Component {
   state = {
@@ -27,6 +28,7 @@ class App extends Component {
     return (
       <div>
         <SearchForm addSearchQuery={this.onSearchQuery} />
+
         {this.state.loading ? (
           <p className="loading">Loading...</p>
         ) : (
@@ -35,6 +37,7 @@ class App extends Component {
             <ImageResult data={this.state.images} className="ImageTop" />
           </div>
         )}
+        <Widget />
       </div>
     );
   }
