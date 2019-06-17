@@ -1,14 +1,20 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import "../App.css";
 
 const ImageResult = props => (
-  <div>
+  <div className="ImageGrid">
     {props.data.map(image => {
       return (
-        <div key={image.id} className="ImageGrid">
+        <div key={image.id}>
           <div>
             <img src={image.largeImageURL} alt="Pixabay" />
-            <p>Pixabay</p>
+            <p>
+              By <strong className="text">{image.user}</strong>
+            </p>
+            <button className="btn">
+              <Link to="/image/:id">View Image</Link>
+            </button>
           </div>
         </div>
       );
