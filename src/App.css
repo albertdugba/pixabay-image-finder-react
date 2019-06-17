@@ -106,3 +106,19 @@ form::before {
     justify-content: center;
   }
 }
+
+/* Videos */
+.video input {
+  border: none;
+  outline: none;
+  border-radius: 12px;
+  border: 1.3px solid teal;
+  padding: 0.43rem;
+  margin-left: 12px;
+}
+
+video {
+  background: red;
+  height: 900px;
+  width: 200px;
+}
