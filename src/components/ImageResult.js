@@ -2,10 +2,10 @@ import React from "react";
 import "../App.css";
 
 const ImageResult = props => (
-  <div className="ImageGrid">
+  <div>
     {props.data.map(image => {
       return (
-        <div key={image.id}>
+        <div key={image.id} className="ImageGrid">
           <div>
             <img src={image.largeImageURL} alt="Pixabay" />
             <p>Pixabay</p>

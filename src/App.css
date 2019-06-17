@@ -48,9 +48,11 @@ form::before {
 }
 
 .ImageGrid {
-  margin: auto;
-  padding: 20px auto;
-  margin: auto;
+  padding: 2rem auto;
+
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-gap: 2rem;
 }
 
 .ImageTop img {
