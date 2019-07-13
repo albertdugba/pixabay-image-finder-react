@@ -47,6 +47,13 @@ form::before {
   font: 3rem;
 }
 
+a {
+  text-decoration: none;
+  color: #fff;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
 .ImageGrid img {
   height: 360px;
   width: 360px;
@@ -121,4 +128,30 @@ video {
   background: red;
   height: 900px;
   width: 200px;
+}
+
+.widget {
+  position: fixed;
+  top: 250px;
+  left: 0;
+  width: 280px;
+  margin-left: 20px;
+  border: 1px solid teal;
+  padding: 1rem;
+  background: linear-gradient(#fff, teal);
+  opacity: 0.7;
+}
+
+.widget h2 {
+  color: teal;
+}
+
+.side-widget p {
+  border-bottom: 1px dotted teal;
+  padding: 0.2rem;
+}
+
+.page-container {
+  display: flex;
+  flex: 3;
 }

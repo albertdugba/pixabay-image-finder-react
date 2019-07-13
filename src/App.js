@@ -9,10 +9,11 @@ class App extends Component {
     apiURL: "https://pixabay.com/api/?",
     apiKey: "12767634-de61c4a8d872248a18dce66ea",
     loading: false,
-    images: []
+    images: [],
+    image: null
   };
+
   onSearchQuery = input => {
-    // console.log(input);
     this.setState({ loading: true });
     axios
       .get(
@@ -21,8 +22,12 @@ class App extends Component {
         }&q=${input}&image_type=photo`
       )
       .then(data => this.setState({ images: data.data.hits, loading: false }))
-      .catch(error => this.setState({ loading: false }));
+      .catch(error => this.setState({ loading: false, error }));
   };
+  
+  // getAnImage = (id) => {
+  //   console.log('click', id)
+  // };
   render() {
     console.log(this.state.images);
     return (
@@ -32,12 +37,16 @@ class App extends Component {
         {this.state.loading ? (
           <p className="loading">Loading...</p>
         ) : (
-          <div>
+          <div className="page-container">
             {" "}
-            <ImageResult data={this.state.images} className="ImageTop" />
+            <ImageResult
+              data={this.state.images}
+              // onViewImage={this.getAnImage}
+              className="ImageTop"
+            />
+            <Widget />
           </div>
         )}
-        <Widget />
       </div>
     );
   }

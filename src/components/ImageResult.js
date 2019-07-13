@@ -13,15 +13,8 @@ const ImageResult = props => (
               By <strong className="text">{image.user}</strong>
             </p>
             <button className="btn">
-              <Link
-                to={{
-                  pathname: `/image/${image.id}`,
-
-                  state: { image: image.type }
-                }}
-              >
-                View Image
-              </Link>
+              <Link to={`/image/${image.id}`}>View Image</Link>
+              {/* <button onClick={() => props.onViewImage(image.id)}>view image</button> */}
             </button>
           </div>
         </div>
