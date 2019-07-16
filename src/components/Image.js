@@ -42,22 +42,29 @@ class Image extends Component {
                 </h1>
                 <p className="list-group-item">
                   <FaHeart className="like" />
-                  {img.likes.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                  <span>
+                    {img.likes.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                  </span>
                 </p>
 
                 <p className="list-group-item">
                   <FaEye className="eye" />
-                  {img.views.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                  <span>
+                    {img.views.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                  </span>
                 </p>
                 <p className="list-group-item ">
                   <FaTags className="tags" />
-                  {img.tags}
+                  <span>{img.tags}</span>
                 </p>
                 <p className="list-group-item">
                   <FaDownload className="download" />
-                  {img.downloads
-                    .toString()
-                    .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                  <span>
+                    {" "}
+                    {img.downloads
+                      .toString()
+                      .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                  </span>
                 </p>
                 <button className="list-group-item btn">
                   {" "}

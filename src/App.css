@@ -192,6 +192,7 @@ strong {
   font-size: 2rem;
 }
 
+/* Icons & Utlilities Classes */
 .like,
 .eye,
 .download,
@@ -201,10 +202,19 @@ strong {
   margin-right: 9px;
 }
 
+.like {
+  color: red;
+}
+
+.tags,
+.download,
+.eye {
+  color: teal;
+}
+
 .arrow {
   background: teal;
   color: #fff;
-  /* padding: 1rem; */
 }
 
 .btn {
@@ -214,4 +224,9 @@ strong {
 .list-group-item {
   border-bottom: 1px dotted teal;
   align-items: center;
+}
+
+.list-group-item span {
+  font-weight: bold;
+  text-transform: uppercase;
 }
