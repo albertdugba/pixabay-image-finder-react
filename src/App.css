@@ -74,15 +74,18 @@ a {
 
 .text {
   text-transform: uppercase;
+
+  font-size: 1rem;
 }
 
 .btn {
-  background: teal !important;
+  background: teal;
   padding: 0.5rem;
   color: #fff;
   border: none;
   outline: none;
   cursor: pointer;
+  text-decoration: none;
 }
 
 @media (max-width: 769px) {
@@ -165,16 +168,50 @@ img {
 .single-image {
   margin-top: 40px;
   padding-left: 30px;
+  margin-left: 0;
+  margin-right: 0;
 }
 
 .img-layout {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  /* display: grid;
+  grid-template-columns: repeat(2, 1fr); */
+  display: flex;
 }
 
 a {
   color: black;
 }
 
-/* .img-grid-layout {
-} */
+.second-column {
+  width: 60%;
+  margin: auto;
+}
+
+strong {
+  text-transform: uppercase;
+  font-size: 2rem;
+}
+
+.like,
+.eye,
+.download,
+.tags {
+  /* color: red; */
+  font-size: 2rem;
+  margin-right: 9px;
+}
+
+.arrow {
+  background: teal;
+  color: #fff;
+  /* padding: 1rem; */
+}
+
+.btn {
+  padding: 1rem;
+}
+
+.list-group-item {
+  border-bottom: 1px dotted teal;
+  align-items: center;
+}
