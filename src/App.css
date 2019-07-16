@@ -215,6 +215,7 @@ strong {
 .arrow {
   background: teal;
   color: #fff;
+  font-size: 1.12rem;
 }
 
 .btn {

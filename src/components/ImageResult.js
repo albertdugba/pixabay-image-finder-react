@@ -14,7 +14,6 @@ const ImageResult = props => (
             </p>
             <button className="btn">
               <Link to={`/image/${image.id}`}>View Image</Link>
-              {/* <button onClick={() => props.onViewImage(image.id)}>view image</button> */}
             </button>
           </div>
         </div>

@@ -9,8 +9,7 @@ class App extends Component {
     apiURL: "https://pixabay.com/api/?",
     apiKey: "12767634-de61c4a8d872248a18dce66ea",
     loading: false,
-    images: [],
-    image: null
+    images: []
   };
 
   onSearchQuery = input => {
@@ -24,6 +23,17 @@ class App extends Component {
       .then(data => this.setState({ images: data.data.hits, loading: false }))
       .catch(error => this.setState({ loading: false, error }));
   };
+
+  componentDidMount() {
+    const jsonImages = localStorage.getItem("Images");
+    const parsedImages = JSON.parse(jsonImages);
+    this.setState({ images: parsedImages });
+  }
+
+  componentDidUpdate() {
+    const image = JSON.stringify(this.state.images);
+    localStorage.setItem("Images", image);
+  }
 
   render() {
     console.log(this.state.images);
