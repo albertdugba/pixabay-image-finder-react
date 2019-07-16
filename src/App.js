@@ -24,10 +24,7 @@ class App extends Component {
       .then(data => this.setState({ images: data.data.hits, loading: false }))
       .catch(error => this.setState({ loading: false, error }));
   };
-  
-  // getAnImage = (id) => {
-  //   console.log('click', id)
-  // };
+
   render() {
     console.log(this.state.images);
     return (

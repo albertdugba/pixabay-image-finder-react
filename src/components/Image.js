@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import axios from "axios";
 
 class Image extends Component {
@@ -21,19 +21,39 @@ class Image extends Component {
   }
 
   render() {
-    const { image, loading, error } = this.state;
+    const { image, loading } = this.state;
 
     return (
-      <div>
-        Go back <Link to="/">Home</Link>
-        <h2>Image ID:{this.props.match.params.id}</h2>
+      <div className="single-image">
         {loading ? (
-      <p>Loading ...</p>
-    ) : image.map(img => (
-          <div key={img.id}>
-            <img src={img.largeImageURL} alt={img.tags} />
-          </div>
-        ))}
+          <p>Loading ...</p>
+        ) : (
+          image.map(img => (
+            <div key={img.id} className="img-layout">
+              <img src={img.largeImageURL} alt={img.tags} className="img" />
+
+              <div className="list-group">
+                <p className="list-group-item">
+                  {img.likes.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                </p>
+                <p>{img.user}</p>
+                <p className="list-group-item">
+                  {img.views.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                </p>
+                <p className="list-group-item">{img.tags}</p>
+                <p className="list-group-item">
+                  {img.downloads
+                    .toString()
+                    .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                </p>
+                <p className="list-group-item">
+                  {" "}
+                  <a href={img.userImageURL}>Image</a>
+                </p>
+              </div>
+            </div>
+          ))
+        )}
       </div>
     );
   }
