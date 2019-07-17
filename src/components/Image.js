@@ -1,10 +1,10 @@
 import React, { Component } from "react";
+import axios from "axios";
 import { FaHeart } from "react-icons/fa";
 import { FaEye } from "react-icons/fa";
 import { FaDownload } from "react-icons/fa";
 import { FaArrowAltCircleRight } from "react-icons/fa";
 import { FaTags } from "react-icons/fa";
-import axios from "axios";
 
 class Image extends Component {
   state = {
@@ -17,23 +17,13 @@ class Image extends Component {
   componentDidMount() {
     const { apiURL, apiKey } = this.state;
     this.setState({ loading: true });
-
+    // Make a request to the pixabay api
     axios
       .get(`${apiURL}${apiKey}&id=${this.props.match.params.id}`)
       .then(data => this.setState({ image: data.data.hits, loading: false }))
       .catch(error => this.setState({ loading: false, error }));
   }
 
-  // componentDidMount() {
-  //   const json = localStorage.getItem("Images");
-  //   const images = JSON.parse(json);
-  //   this.setState({ image: images });
-  // }
-
-  // componentDidUpdate() {
-  //   const imgs = JSON.stringify(this.state.image);
-  //   localStorage.setItem("Images", imgs);
-  // }
   render() {
     const { image, loading } = this.state;
 
@@ -44,6 +34,7 @@ class Image extends Component {
           {loading ? (
             <p>Loading ...</p>
           ) : (
+            // Map through the returned data
             image.map(img => (
               <div key={img.id} className="img-layout">
                 <img src={img.largeImageURL} alt={img.tags} className="img" />
@@ -57,7 +48,8 @@ class Image extends Component {
                     <span>
                       {img.likes
                         .toString()
-                        .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                        .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
+                      likes
                     </span>
                   </p>
 
@@ -66,7 +58,8 @@ class Image extends Component {
                     <span>
                       {img.views
                         .toString()
-                        .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                        .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
+                      views
                     </span>
                   </p>
                   <p className="list-group-item ">
@@ -79,7 +72,8 @@ class Image extends Component {
                       {" "}
                       {img.downloads
                         .toString()
-                        .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}
+                        .replace(/\B(?=(\d{3})+(?!\d))/g, ",")}{" "}
+                      downloads
                     </span>
                   </p>
                   <button className="list-group-item btn">

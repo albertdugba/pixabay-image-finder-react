@@ -24,16 +24,18 @@ class App extends Component {
       .catch(error => this.setState({ loading: false, error }));
   };
 
-  componentDidMount() {
-    const jsonImages = localStorage.getItem("Images");
-    const parsedImages = JSON.parse(jsonImages);
-    this.setState({ images: parsedImages });
-  }
+  // Pesist to Local Storage
 
-  componentDidUpdate() {
-    const image = JSON.stringify(this.state.images);
-    localStorage.setItem("Images", image);
-  }
+  // componentDidUpdate = () => {
+  //   const images = JSON.stringify(this.state.images);
+  //   localStorage.setItem("Images", images);
+  // };
+
+  // componentDidMount = () => {
+  //   const jsonImages = localStorage.getItem("Images");
+  //   const images = JSON.parse(jsonImages);
+  //   this.setState({ images });
+  // };
 
   render() {
     console.log(this.state.images);
@@ -46,11 +48,7 @@ class App extends Component {
         ) : (
           <div className="page-container">
             {" "}
-            <ImageResult
-              data={this.state.images}
-              // onViewImage={this.getAnImage}
-              className="ImageTop"
-            />
+            <ImageResult data={this.state.images} className="ImageTop" />
             <Widget />
           </div>
         )}
