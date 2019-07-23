@@ -20,7 +20,7 @@ class Image extends Component {
     // Make a request to the pixabay api
     axios
       .get(`${apiURL}${apiKey}&id=${this.props.match.params.id}`)
-      .then(data => this.setState({ image: data.data.hits, loading: false }))
+      .then(res => this.setState({ image: res.data.hits, loading: false }))
       .catch(error => this.setState({ loading: false, error }));
   }
 
