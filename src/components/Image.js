@@ -43,6 +43,8 @@ class Image extends Component {
                   <h1 className="l-heading">
                     <strong>{img.user} </strong>Image Details
                   </h1>
+
+                  {/* Heart Icon */}
                   <p className="list-group-item">
                     <FaHeart className="like" />
                     <span>
@@ -53,6 +55,7 @@ class Image extends Component {
                     </span>
                   </p>
 
+                  {/* Views Icon */}
                   <p className="list-group-item">
                     <FaEye className="eye" />
                     <span>
@@ -62,10 +65,14 @@ class Image extends Component {
                       views
                     </span>
                   </p>
+
+                  {/* Tags Icons */}
                   <p className="list-group-item ">
                     <FaTags className="tags" />
                     <span>{img.tags}</span>
                   </p>
+
+                  {/* Download Icons */}
                   <p className="list-group-item">
                     <FaDownload className="download" />
                     <span>
