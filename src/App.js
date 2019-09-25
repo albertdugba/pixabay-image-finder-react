@@ -2,7 +2,6 @@ import React, { Component } from "react";
 import axios from "axios";
 import SearchForm from "./components/SearchForm";
 import ImageResult from "./components/ImageResult";
-import Widget from "./components/Widget";
 
 class App extends Component {
   state = {
@@ -16,9 +15,7 @@ class App extends Component {
     this.setState({ loading: true });
     axios
       .get(
-        `${this.state.apiURL}key=${
-          this.state.apiKey
-        }&q=${input}&image_type=photo`
+        `${this.state.apiURL}key=${this.state.apiKey}&q=${input}&image_type=photo`
       )
       .then(data => this.setState({ images: data.data.hits, loading: false }))
       .catch(error => this.setState({ loading: false, error }));
@@ -49,7 +46,6 @@ class App extends Component {
           <div className="page-container">
             {" "}
             <ImageResult data={this.state.images} className="ImageTop" />
-            <Widget />
           </div>
         )}
       </div>

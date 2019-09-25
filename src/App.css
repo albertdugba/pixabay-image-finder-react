@@ -55,18 +55,19 @@ a {
 }
 
 .ImageGrid img {
-  height: 360px;
-  width: 360px;
+  height: 200px;
+  width: 200px;
 }
 
 .ImageGrid {
   width: 100%;
-  max-width: 1100px;
+  max-width: 1000px;
   margin: auto;
   padding-right: 250px auto;
   margin-top: 250px;
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
+
   grid-gap: 2rem;
   flex-wrap: wrap;
   justify-content: center;
@@ -88,21 +89,30 @@ a {
   text-decoration: none;
 }
 
+.back {
+  margin-left: 27px;
+  background: teal;
+  color: #fff !important;
+  display: inline-block;
+  margin-top: 10px;
+  padding: 0 0.54rem;
+  border-radius: 7px;
+}
+
 @media (max-width: 769px) {
   .ImageGrid {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     width: 50%;
-    margin-right: 300px;
-    margin-top: 200px auto;
+    margin: 300px auto;
     padding: 1rem auto;
     justify-content: center;
     align-items: center;
   }
 
   .ImageGrid img {
-    width: 295px;
-    height: 295px;
+    width: 19;
+    height: 19;
     overflow: hidden;
   }
 }
@@ -116,43 +126,6 @@ a {
     margin-top: 200px;
     justify-content: center;
   }
-}
-
-/* Videos */
-.video input {
-  border: none;
-  outline: none;
-  border-radius: 12px;
-  border: 1.3px solid teal;
-  padding: 0.43rem;
-  margin-left: 12px;
-}
-
-video {
-  background: red;
-  height: 900px;
-  width: 200px;
-}
-
-.widget {
-  position: fixed;
-  top: 250px;
-  left: 0;
-  width: 280px;
-  margin-left: 20px;
-  border: 1px solid teal;
-  padding: 1rem;
-  background: linear-gradient(#fff, teal);
-  opacity: 0.7;
-}
-
-.widget h2 {
-  color: teal;
-}
-
-.side-widget p {
-  border-bottom: 1px dotted teal;
-  padding: 0.2rem;
 }
 
 .page-container {
@@ -218,7 +191,8 @@ strong {
 }
 
 .btn {
-  padding: 1rem;
+  padding: 0.45rem;
+  color: #fff;
 }
 
 .list-group-item {

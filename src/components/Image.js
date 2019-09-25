@@ -1,10 +1,14 @@
 import React, { Component } from "react";
 import axios from "axios";
-import { FaHeart } from "react-icons/fa";
-import { FaEye } from "react-icons/fa";
-import { FaDownload } from "react-icons/fa";
-import { FaArrowAltCircleRight } from "react-icons/fa";
-import { FaTags } from "react-icons/fa";
+import { Link } from "react-router-dom";
+import { FaArrowLeft } from "react-icons/fa";
+import {
+  FaEye,
+  FaHeart,
+  FaDownload,
+  FaArrowRight,
+  FaTags
+} from "react-icons/fa";
 
 class Image extends Component {
   state = {
@@ -29,7 +33,13 @@ class Image extends Component {
 
     return (
       <div>
-        <h2>Home</h2>
+        <div className="back">
+          <Link to="/">
+            <p>
+              <FaArrowLeft /> Back Home
+            </p>
+          </Link>
+        </div>
         <div className="single-image">
           {loading ? (
             <p>Loading ...</p>
@@ -86,8 +96,7 @@ class Image extends Component {
                   <button className="list-group-item btn">
                     {" "}
                     <a href={img.userImageURL} className="arrow">
-                      Go to Profile{" "}
-                      <FaArrowAltCircleRight className="arrow-right" />
+                      Go to Profile <FaArrowRight className="arrow-right" />
                     </a>
                   </button>
                 </div>
