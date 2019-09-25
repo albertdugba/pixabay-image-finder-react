@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/pixabay-image-finder-react/static/css/main.5c10e49f.chunk.css",
+    "main.js": "/pixabay-image-finder-react/static/js/main.8a97d3f7.chunk.js",
+    "main.js.map": "/pixabay-image-finder-react/static/js/main.8a97d3f7.chunk.js.map",
+    "runtime~main.js": "/pixabay-image-finder-react/static/js/runtime~main.cda9642b.js",
+    "runtime~main.js.map": "/pixabay-image-finder-react/static/js/runtime~main.cda9642b.js.map",
+    "static/js/2.a764d7bc.chunk.js": "/pixabay-image-finder-react/static/js/2.a764d7bc.chunk.js",
+    "static/js/2.a764d7bc.chunk.js.map": "/pixabay-image-finder-react/static/js/2.a764d7bc.chunk.js.map",
+    "index.html": "/pixabay-image-finder-react/index.html",
+    "precache-manifest.38860ed133c758061c40cca1d31c5c93.js": "/pixabay-image-finder-react/precache-manifest.38860ed133c758061c40cca1d31c5c93.js",
+    "service-worker.js": "/pixabay-image-finder-react/service-worker.js",
+    "static/css/main.5c10e49f.chunk.css.map": "/pixabay-image-finder-react/static/css/main.5c10e49f.chunk.css.map",
+    "static/media/App.css": "/pixabay-image-finder-react/static/media/banner.9007f707.jpg"
+  }
+}
