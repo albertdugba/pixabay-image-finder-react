@@ -4,6 +4,7 @@
   "private": true,
   "homepage": "https://albertdugba.github.io/pixabay-image-finder-react",
   "dependencies": {
+    "@material-ui/core": "^4.9.0",
     "axios": "^0.19.0",
     "gh-pages": "^2.1.1",
     "react": "^16.8.6",
