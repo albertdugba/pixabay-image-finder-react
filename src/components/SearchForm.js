@@ -1,33 +1,36 @@
-import React, { Component } from "react";
+import React, { useState } from "react";
+// import SearchQuery from "../pages/Home";
 import "../App.css";
 
-class SearchForm extends Component {
-  state = {
-    inputKey: ""
-  };
+const SearchForm = props => {
+  const { search } = props;
+  const [query, setQuery] = useState("");
 
-  onChangeHandler = event =>
-    this.setState({ [event.target.name]: event.target.value });
+  const onChangeHandler = event =>
+    setQuery({ [event.target.name]: event.target.value });
 
-  onSubmitHandler = event => {
+  const onSubmitHandler = event => {
     event.preventDefault();
-    this.props.addSearchQuery(this.state.inputKey);
-    this.setState({ inputKey: "" });
+    console.log(search(event.target.value));
+
+    resetForm();
   };
 
-  render() {
-    return (
-      <form onSubmit={this.onSubmitHandler}>
-        <input
-          type="text"
-          name="inputKey"
-          value={this.state.inputKey}
-          onChange={this.onChangeHandler}
-          placeholder="Search for awesome images"
-        />
-      </form>
-    );
-  }
-}
+  const resetForm = () => {
+    setQuery("");
+  };
+
+  return (
+    <form onSubmit={onSubmitHandler}>
+      <input
+        value={query}
+        type="text"
+        name="query"
+        onChange={onChangeHandler}
+        placeholder="Search for awesome images"
+      />
+    </form>
+  );
+};
 
 export default SearchForm;

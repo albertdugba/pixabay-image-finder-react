@@ -1,10 +1,10 @@
-const initialState = {
+export const initialState = {
   loading: false,
   photos: [],
   errorMessage: null
 };
 
-export const reducer = (state = initialState, action) => {
+export const reducer = (state, action) => {
   switch (action.type) {
     case "SEARCH_PHOTOS_REQUEST":
       return { ...state, loading: true, errorMessage: null };

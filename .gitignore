@@ -8,6 +8,9 @@
 # testing
 /coverage
 
+# Api credentials
+/public/src/context/keys.js
+
 # production
 /build
 
