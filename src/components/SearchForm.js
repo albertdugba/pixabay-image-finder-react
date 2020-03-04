@@ -1,5 +1,7 @@
 import React, { useState } from "react";
-import "../App.css";
+import { SearchBar } from "../styles/GlobalStyles";
+
+import "../App.scss";
 
 const SearchForm = ({ search }) => {
   const [query, setQuery] = useState("");
@@ -8,8 +10,9 @@ const SearchForm = ({ search }) => {
 
   const onSubmitHandler = event => {
     event.preventDefault();
-    console.log(search(query));
+    search(query);
     resetForm();
+    console.log(event);
   };
 
   const resetForm = () => {
@@ -17,15 +20,17 @@ const SearchForm = ({ search }) => {
   };
 
   return (
-    <form onSubmit={onSubmitHandler}>
-      <input
-        type="text"
-        value={query}
-        name="query"
-        onChange={onChangeHandler}
-        placeholder="Search for awesome images"
-      />
-    </form>
+    <SearchBar>
+      <form onSubmit={onSubmitHandler}>
+        <input
+          type="text"
+          value={query}
+          name="query"
+          onChange={onChangeHandler}
+          placeholder="Search for awesome images"
+        />
+      </form>
+    </SearchBar>
   );
 };
 

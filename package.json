@@ -5,13 +5,16 @@
   "homepage": "https://albertdugba.github.io/pixabay-image-finder-react",
   "dependencies": {
     "@material-ui/core": "^4.9.0",
+    "@material-ui/icons": "^4.5.1",
     "axios": "^0.19.0",
     "gh-pages": "^2.1.1",
+    "node-sass": "^4.13.1",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
     "react-icons": "^3.7.0",
     "react-router-dom": "^5.0.1",
-    "react-scripts": "3.0.1"
+    "react-scripts": "3.0.1",
+    "styled-components": "^5.0.1"
   },
   "scripts": {
     "start": "react-scripts start",

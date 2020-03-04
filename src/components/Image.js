@@ -1,9 +1,14 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
-const Image = ({ comments, largeImageURL }) => {
+import "../App.scss";
+
+const Image = ({ comments, largeImageURL, id }) => {
   return (
-    <div>
-      <img src={largeImageURL} alt={comments} />
+    <div className="ImageGrid">
+      <Link to={`image-detail/${id}`}>
+        <img src={largeImageURL} alt={comments} />
+      </Link>
     </div>
   );
 };

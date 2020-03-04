@@ -1,0 +1,15 @@
+img {
+  height: 300px;
+  width: 300px; }
+
+.ImageGrid {
+  position: relative;
+  content: "Welcome"; }
+  .ImageGrid:after {
+    top: 200px;
+    left: 0;
+    right: 0;
+    bottom: 120px;
+    background-color: red;
+    color: white; }
+/*# sourceMappingURL=App.css.map */
